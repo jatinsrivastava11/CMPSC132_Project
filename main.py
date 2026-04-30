@@ -1,3 +1,4 @@
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -35,7 +36,7 @@ def main():
 
 def search(query):
     for laptop in fetch():
-        if query.lower() in laptop[0].lower():
+        if laptop[0] and query.lower() in laptop[0].lower():
             print("Name: ", laptop[0])
             print("Price: ", laptop[1])
             print("Rating: ", laptop[2])
